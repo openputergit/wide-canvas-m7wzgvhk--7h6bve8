@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasterFurdinand - Strength in Serenity</title>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --golden: #D4AF37;
+            --sage: #8B9D83;
+            --cream: #F5F5DC;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FCFAF7;
+        }
+
+        .serif-font {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .ripple {
+            background: radial-gradient(circle, var(--golden) 0%, transparent 70%);
+            animation: rippleEffect 4s infinite;
+        }
+
+        @keyframes rippleEffect {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+
+        .sound-toggle {
+            transition: all 0.3s ease;
+        }
+
+        .sound-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .season-card {
+            transition: all 0.3s ease;
+        }
+
+        .season-card:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Sound Toggle -->
+    <div class="fixed top-4 right-4 z-50 sound-toggle cursor-pointer text-golden" onclick="toggleSound()">
+        <i class="bi bi-volume-mute-fill text-2xl" id="soundIcon"></i>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen relative overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1599691337845-9f6f23d8aa99?auto=format&fit=crop&q=80');">
+            <div class="gradient-overlay absolute inset-0"></div>
+        </div>
+        <div class="relative container mx-auto px-4 h-screen flex items-center">
+            <div class="text-white max-w-3xl">
+                <h1 class="serif-font text-6xl md:text-7xl mb-6 leading-tight">Strength in Serenity</h1>
+                <p class="text-xl mb-8">A Token of Wisdom & Stability</p>
+                <button class="bg-golden text-white px-8 py-3 rounded-full hover:bg-opacity-90 transition-all">
+                    Embrace the Peaceful Power
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="py-20 bg-cream">
+        <div class="container mx-auto px-4">
+            <h2 class="serif-font text-4xl text-center mb-16">The Way of MasterFurdinand</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-golden bg-opacity-20 flex items-center justify-center">
+                        <i class="bi bi-tree text-3xl text-golden"></i>
+                    </div>
+                    <h3 class="serif-font text-2xl mb-4">Stability</h3>
+                    <p>Like a mountain, unmoved by temporary storms</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-golden bg-opacity-20 flex items-center justify-center">
+                        <i class="bi bi-water text-3xl text-golden"></i>
+                    </div>
+                    <h3 class="serif-font text-2xl mb-4">Patience</h3>
+                    <p>Flow like water, adapting yet persistent</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-golden bg-opacity-20 flex items-center justify-center">
+                        <i class="bi bi-brightness-high text-3xl text-golden"></i>
+                    </div>
+                    <h3 class="serif-font text-2xl mb-4">Growth</h3>
+                    <p>Rising steadily like the morning sun</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosystem Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="serif-font text-4xl text-center mb-16">Ecosystem & Utility</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="serif-font text-2xl mb-4">The Furdinand Reserve</h3>
+                    <p class="mb-4">A sophisticated treasury system ensuring long-term sustainability and growth.</p>
+                    <div class="h-2 bg-golden rounded-full w-3/4"></div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="serif-font text-2xl mb-4">Staking & Rewards</h3>
+                    <p class="mb-4">Earn passive rewards through our calm yet rewarding financial strategy.</p>
+                    <div class="h-2 bg-golden rounded-full w-1/2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasons Section -->
+    <section class="py-20 bg-sage bg-opacity-10">
+        <div class="container mx-auto px-4">
+            <h2 class="serif-font text-4xl text-center mb-16">Seasons of Growth</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="season-card bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="serif-font text-2xl mb-4 text-green-600">Spring</h3>
+                    <p>Token launch & foundation building</p>
+                </div>
+                <div class="season-card bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="serif-font text-2xl mb-4 text-yellow-600">Summer</h3>
+                    <p>Expansion & strategic alliances</p>
+                </div>
+                <div class="season-card bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="serif-font text-2xl mb-4 text-orange-600">Autumn</h3>
+                    <p>Stability mechanisms & DAO evolution</p>
+                </div>
+                <div class="season-card bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="serif-font text-2xl mb-4 text-blue-600">Winter</h3>
+                    <p>Sustainable legacy & ecosystem refinements</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wisdom Hub -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="serif-font text-4xl text-center mb-16">Wisdom Hub</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <article class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="serif-font text-2xl mb-4">The Art of Patience</h3>
+                    <p class="mb-4">Learn why time in the market beats timing the market.</p>
+                    <a href="#" class="text-golden hover:underline">Read More →</a>
+                </article>
+                <article class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="serif-font text-2xl mb-4">Mindful Trading</h3>
+                    <p class="mb-4">Developing emotional resilience in volatile markets.</p>
+                    <a href="#" class="text-golden hover:underline">Read More →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize ScrollReveal
+        ScrollReveal().reveal('.season-card', {
+            delay: 200,
+            distance: '20px',
+            origin: 'bottom',
+            interval: 100
+        });
+
+        // Sound functionality
+        let sound = new Howl({
+            src: ['https://assets.mixkit.co/sfx/preview/mixkit-peaceful-morning-birds-2482.mp3'],
+            loop: true,
+            volume: 0.3
+        });
+
+        let isSoundPlaying = false;
+
+        function toggleSound() {
+            const soundIcon = document.getElementById('soundIcon');
+            if (isSoundPlaying) {
+                sound.pause();
+                soundIcon.classList.remove('bi-volume-up-fill');
+                soundIcon.classList.add('bi-volume-mute-fill');
+            } else {
+                sound.play();
+                soundIcon.classList.remove('bi-volume-mute-fill');
+                soundIcon.classList.add('bi-volume-up-fill');
+            }
+            isSoundPlaying = !isSoundPlaying;
+        }
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax');
+            parallaxElements.forEach(element => {
+                const speed = element.dataset.speed;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
